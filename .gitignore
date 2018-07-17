@@ -6,7 +6,7 @@
 build/
 DerivedData/
 
-Resnet50.mlmodel
+pokAR/pokAR/Model/Resnet50.mlmodel
 
 ## Various settings
 *.pbxuser
@@ -68,3 +68,4 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+.DS_Store
