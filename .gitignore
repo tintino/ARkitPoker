@@ -6,7 +6,7 @@
 build/
 DerivedData/
 
-pokAR/pokAR/Model/Resnet50.mlmodel
+*.mlmodel
 
 ## Various settings
 *.pbxuser
