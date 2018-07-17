@@ -15,6 +15,7 @@
 		4BF15A0320FDDA4E008FE5C2 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF15A0220FDDA4E008FE5C2 /* MenuViewController.swift */; };
 		4BF15A0520FDDCC6008FE5C2 /* ARSCNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF15A0420FDDCC5008FE5C2 /* ARSCNViewController.swift */; };
 		4BF15A0A20FDDD82008FE5C2 /* AVCaptureLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF15A0920FDDD82008FE5C2 /* AVCaptureLayerViewController.swift */; };
+		4BF15A0F20FDE483008FE5C2 /* CopyHereResnet50.mlmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF15A0E20FDE483008FE5C2 /* CopyHereResnet50.mlmodel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4BF15A0220FDDA4E008FE5C2 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4BF15A0420FDDCC5008FE5C2 /* ARSCNViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARSCNViewController.swift; sourceTree = "<group>"; };
 		4BF15A0920FDDD82008FE5C2 /* AVCaptureLayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureLayerViewController.swift; sourceTree = "<group>"; };
+		4BF15A0E20FDE483008FE5C2 /* CopyHereResnet50.mlmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyHereResnet50.mlmodel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,7 @@
 		4BF159CB20FDCBA6008FE5C2 /* pokAR */ = {
 			isa = PBXGroup;
 			children = (
-				4BF15A0720FDDD23008FE5C2 /* Model */,
+				4BF15A0D20FDE45C008FE5C2 /* Model */,
 				4BF15A0820FDDD52008FE5C2 /* View */,
 				4BF15A0620FDDD12008FE5C2 /* Controller */,
 				4BF159CC20FDCBA6008FE5C2 /* AppDelegate.swift */,
@@ -80,14 +82,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		4BF15A0720FDDD23008FE5C2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4BF159E020FDCCF7008FE5C2 /* Resnet50.mlmodel */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		4BF15A0820FDDD52008FE5C2 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +89,15 @@
 				4BF159D720FDCBA8008FE5C2 /* LaunchScreen.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4BF15A0D20FDE45C008FE5C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4BF15A0E20FDE483008FE5C2 /* CopyHereResnet50.mlmodel.swift */,
+				4BF159E020FDCCF7008FE5C2 /* Resnet50.mlmodel */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +176,7 @@
 				4BF15A0A20FDDD82008FE5C2 /* AVCaptureLayerViewController.swift in Sources */,
 				4BF159CD20FDCBA6008FE5C2 /* AppDelegate.swift in Sources */,
 				4BF15A0320FDDA4E008FE5C2 /* MenuViewController.swift in Sources */,
+				4BF15A0F20FDE483008FE5C2 /* CopyHereResnet50.mlmodel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
