@@ -6,6 +6,8 @@
 build/
 DerivedData/
 
+Resnet50.mlmodel
+
 ## Various settings
 *.pbxuser
 !default.pbxuser
