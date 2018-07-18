@@ -9,10 +9,12 @@
 import UIKit
 import SceneKit
 import ARKit
+import Vision
 
 class ARSCNViewController: UIViewController {
     
     @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet weak var labeDescription: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +37,13 @@ class ARSCNViewController: UIViewController {
         super.viewWillAppear(animated)
         
         // Create a session configuration
-        let configuration = ARWorldTrackingConfiguration()
+        let configuration = ARImageTrackingConfiguration()
+        
+        guard let referenceImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) else {
+            fatalError("Missing expected asset catalog resources.")
+        }
+        
+        configuration.trackingImages = referenceImages
         
         // Run the view's session
         sceneView.session.run(configuration)
@@ -60,10 +68,25 @@ extension ARSCNViewController: ARSCNViewDelegate {
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
     }
-}
-
-extension ARSCNViewController: ARSessionDelegate {
-    func session(_ session: ARSession, didUpdate frame: ARFrame) {
-        print("ARSessionDelegate didUpdate")
+   
+    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+        
+        let node = SCNNode()
+        
+        if let imageAnchor = anchor as? ARImageAnchor {
+            
+            // Create plane rectangle
+            let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
+            
+            // Set color
+            plane.firstMaterial?.diffuse.contents = UIColor(white: 1, alpha: 0.8)
+            
+            // Create node with rectanble inside
+            let planeNode = SCNNode(geometry: plane)
+            planeNode.eulerAngles.x = -.pi / 2
+            node.addChildNode(planeNode)
+        }
+        
+        return node        
     }
 }

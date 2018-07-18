@@ -51,7 +51,7 @@ extension AVCaptureLayerViewController: AVCaptureVideoDataOutputSampleBufferDele
                 
                 guard let results = finishedReq.results as? [VNClassificationObservation] else { return }
                 guard let firstObservation = results.first else { return }
-                
+            
                 DispatchQueue.main.async {
                     self.labelDescription.text = "\(firstObservation.identifier) \(String(format: "%0.f", firstObservation.confidence * 100)) %"
                 }
